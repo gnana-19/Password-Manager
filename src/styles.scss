@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #A59AD7;
+$pink: #FE76C2;
+$blue: #37C7F2;
+$light-red: #fff3f3;
+$light: #fafcff;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$green: #0bf387;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $blue;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $light;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-background-color: #F3F5FA;
+$input-shadow: none;
+
+
+/* Global Styles */
+
+html, body {
+    height: 100%;
+    font-size: 18px !important;
+    overflow: hidden;
+    background: $light;
+}
+
+
+.btn-ripple {
+    position: relative;
+    overflow: none;
+    outline: none;
+
+    border: none; 
+
+    font-size: 16px;
+
+    color: #ff4754;
+    background-color: $light;
+    border-radius: 4px;
+
+    padding: 18px 32px;
+
+    transition-property: opacity, box-shadow, transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.btn-ripple:hover {
+    cursor: pointer;
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .25),
+    0 10px 10px rgba(0, 0, 0, .22);
+    transform: translateY(-.1rem);
+    background-color: #ff4754;
+    color: $light;
+    border: none;
+}
+
+.btn-ripple:active {
+    transform: translateY(.1rem);
+    background-color: #ff4754;
+    color: $light;
+    border: none;
+}
+
+.btn-ripple 
+.ripple {
+    pointer-events: none;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .6);
+    opacity: 0;
+    border: none;
+    animation: rippleAnimation .6s ease-in-out;
+}
+
+@keyframes rippleAnimation {
+    from {
+        opacity: .7;
+        transform: scale(0);
+    }
+
+    80% {
+        opacity: .3;
+    }
+
+    to {
+        opacity: .1;
+        transform: scale(1.2);
+    }
+}
+
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@import '../node_modules/bulma/bulma.sass';
